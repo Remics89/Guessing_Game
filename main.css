@@ -33,3 +33,23 @@ header {
     padding: 5px;
 }
 
+.main-content {
+    display: flex;
+    justify-content: center;
+}
+
+#guessbox {
+    padding: 20px;
+    border-radius: 50%;
+    height: 10em;
+    width: 10em;
+    text-align: center;
+    font-size: larger;
+}
+
+#guess {
+    border-radius: 200px;
+    font-size: large;
+    height: 100px;
+    width: 100px;
+}

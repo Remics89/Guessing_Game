@@ -20,9 +20,21 @@
                 <li class="item3">You have 5 chances to guess correctly</li>
             </ul>
         </caption>
-        <div class="divmain">
-            <div class="divsub">
-              <input>
+        <div class="main-content">
+            <input
+                id="guessbox"
+                placeholder="Enter your guess here"
+                autofocus="autofocus"
+                maxlength="3"
+            />
+        </div>
+        <div class="gamenav">
+            <div>
+                <button id="guess">SUBMIT GUESS</button>
+            </div>
+            <div>
+                <button id="reset">RESET</button>
+                <button id="hint">HINT</button>
             </div>
         </div>
     </body>
