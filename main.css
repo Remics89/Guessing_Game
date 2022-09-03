@@ -1,1 +1,35 @@
-/* Write your CSS code in this file */
+html {
+    background-image: linear-gradient(#949494, #493737);
+    height: 100%;
+    font-family: monospace;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: darkgray;
+}
+
+.title {
+    font-weight: bold;
+    padding: 1%;
+    background-color: rgb(107, 107, 107);
+    color: floralwhite;
+}
+
+.parameters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: floralwhite;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.item1,
+.item2,
+.item3 {
+    padding: 5px;
+}
+
