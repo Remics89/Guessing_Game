@@ -8,6 +8,7 @@ header {
     display: flex;
     justify-content: center;
     background-color: darkgray;
+    margin: 50px;
 }
 
 .title {
@@ -52,4 +53,5 @@ header {
     font-size: large;
     height: 100px;
     width: 100px;
+    
 }
