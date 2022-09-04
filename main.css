@@ -5,10 +5,12 @@ html {
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    background-color: darkgray;
-    margin: 50px;
+    position: fixed;
+    background-color: #c5c5c5;
+    top: 0;
+    right: 0;
+    left: 0;
+
 }
 
 .title {
@@ -16,16 +18,21 @@ header {
     padding: 1%;
     background-color: rgb(107, 107, 107);
     color: floralwhite;
+    text-align: center;
 }
 
 .parameters {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-top: 100px;
     color: floralwhite;
     font-size: larger;
     font-weight: bold;
     text-decoration: underline;
+}
+
+div {
+    padding: 10px;
 }
 
 .item1,
@@ -48,10 +55,31 @@ header {
     font-size: larger;
 }
 
-#guess {
+#guessbutton {
     border-radius: 200px;
     font-size: large;
     height: 100px;
     width: 100px;
-    
+    background-color: rgb(131, 175, 87);
+    box-shadow: 5%;
+}
+
+footer {
+    background-color: #949494;
+    color: black;
+    border-top: solid 10px black;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.images {
+    height: 50px;
+    width: auto;
 }
