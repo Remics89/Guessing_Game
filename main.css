@@ -81,7 +81,6 @@ ul {
 }
 
 #guessbutton {
-  display: fixed;
   border-radius: 40px;
   font-size: large;
   height: 100px;
@@ -101,7 +100,6 @@ ul {
 }
 
 #reset {
-  display: static;
   font-size: medium;
   max-width: max-content;
   height: 40px;
@@ -114,7 +112,6 @@ ul {
 }
 
 #hint {
-  display: static;
   font-size: medium;
   max-width: max-content;
   height: 40px;
