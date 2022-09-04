@@ -43,7 +43,7 @@ ul {
   flex-wrap: wrap;
 }
 
-.showguess1,.showguess2,.showguess3,.showguess4,.showguess5 {
+.showguess {
   padding: 20px;
   margin: 10px;
   font-size: xx-large;
