@@ -1,4 +1,4 @@
-let numGen = function () {
+let generateWinningNumber = function () {
   return Math.ceil(Math.random() * 100);
 };
 
@@ -11,7 +11,7 @@ if (typeof window !== "undefined") {
 
   let inputBox = document.getElementsByClassName("main-content");
 
-  //   let playerGuess;
+  let submitButton = document.getElementsByClassName("gamenav");
 
   let resetValue = `<input id="guessbox" 
   placeholder="Enter your guess here" 
@@ -26,7 +26,11 @@ if (typeof window !== "undefined") {
   disabled=""
   />`;
 
-  //   console.log(guess.value);
+  let submitDisabler = `
+    <button id="guessbutton" disabled="">
+      SUBMIT GUESS
+    </button>
+  `;
 
   let counter = 0;
 
@@ -40,16 +44,18 @@ if (typeof window !== "undefined") {
       let loser = `Sorry. You did not guess correctly. The correct number was ${winningNumber}.`;
 
       console.log(guess.value);
-        if  (guess.value !== Number)  {
-            context.innerText = 'That is not a number. Please input a number.'
-            inputBox[0].innerHTML = resetValue;
-        }
-        if  (guess.value > 100 || guess.value < 1) {
-            context.innerText = 'That number is outside of the game parameters. Please choose a number 1 - 100.'
-            inputBox[0].innerHTML = resetValue;
-        }
+      if (guess.value !== Number) {
+        context.innerText = "That is not a number. Please input a number.";
+        inputBox[0].innerHTML = resetValue;
+      }
+      if (guess.value > 100 || guess.value < 1) {
+        context.innerText =
+          "That number is outside of the game parameters. Please choose a number 1 - 100.";
+        inputBox[0].innerHTML = resetValue;
+      }
       if (guess.value == winningNumber) {
         context.innerText = win;
+        inputBox[0].innerHTML = inputDisabler;
       } else {
         if (guess.value < winningNumber) {
           context.innerText = tooLow;
@@ -86,18 +92,28 @@ if (typeof window !== "undefined") {
       guess.value = null;
       counter = 0;
       inputBox[0].innerHTML = resetValue;
-      console.log(inputBox[0].innerText);
+      document.getElementById("hinttext").innerText = '';
       context.innerText = "Any number 1 - 100";
       for (let i = 0; i < wrongGuesses.length; i++) {
         wrongGuesses[i].innerText = "??";
       }
-      winningNumber = numGen();
+      winningNumber = generateWinningNumber();
     });
-}
 
-// let hint1 = Math.floor(Math.random() * winningNumber + guess.value);
-//         console.log(hint1);
-//         let hint2 = Math.floor(Math.random() * winningNumber + guess.value);
-//         console.log(hint2);
-//         let hint3 = Math.floor(Math.random() * winningNumber + guess.value);
-//         console.log(hint3);
+  let hint = document.getElementById("hint").addEventListener("click", () => {
+    let guess = document.getElementById("guessbox");
+    let cold = "You are quite a ways off from the winning number.";
+    let warm = "You are getting close to the winning number.";
+    let hot = "You are very close to the winning number.";
+
+    let difference = Math.abs(guess.value - winningNumber);
+
+    if (difference < 10) {
+      document.getElementById("hinttext").innerText = hot;
+    } else if (difference < 20) {
+        document.getElementById("hinttext").innerText = warm;
+    } else {
+        document.getElementById("hinttext").innerText = cold;
+    }
+  });
+}
