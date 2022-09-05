@@ -1,4 +1,4 @@
-let generateWinningNumber = function () {
+let numGen = function () {
   return Math.ceil(Math.random() * 100);
 };
 
@@ -97,7 +97,7 @@ if (typeof window !== "undefined") {
       for (let i = 0; i < wrongGuesses.length; i++) {
         wrongGuesses[i].innerText = "??";
       }
-      winningNumber = generateWinningNumber();
+      winningNumber = numGen();
     });
 
   let hint = document.getElementById("hint").addEventListener("click", () => {
